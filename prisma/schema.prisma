@@ -12,6 +12,7 @@ datasource db {
     // https://next-auth.js.org/adapters/prisma#create-the-prisma-schema
     // https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#string
     url      = env("DATABASE_URL")
+     directUrl = env("DIRECT_URL")
 }
 
 model Post {
@@ -47,11 +48,14 @@ model Account {
 }
 
 model Session {
-    id           String   @id @default(cuid())
-    sessionToken String   @unique
-    userId       String
-    expires      DateTime
-    user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id          Int       @id @default(autoincrement())
+  userId      String    // Change the type of userId to match the type of id in the User model
+  user        User      @relation(fields: [userId], references: [id])
+  createdAt   DateTime  @default(now())
+  expiresAt   DateTime
+  page        String
+
+  @@index([userId])
 }
 
 model User {
@@ -63,7 +67,20 @@ model User {
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
+    logs          Log[]
 }
+
+model Log {
+  id          Int       @id @default(autoincrement())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  page        String
+  action      String   
+  timestamp   DateTime  @default(now())
+
+  @@index([userId])
+}
+
 
 model VerificationToken {
     identifier String
