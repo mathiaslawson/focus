@@ -3,6 +3,7 @@ import Link from "next/link";
 import { LatestPost } from "~/app/_components/post";
 import { getServerAuthSession } from "~/server/auth";
 import { api, HydrateClient } from "~/trpc/server";
+import { ThemeSwitcher } from "./_components/ThemeSwitcher";
 
 
 export default async function Home() {
@@ -13,8 +14,9 @@ export default async function Home() {
 
   return (
     <HydrateClient>
+      
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-       
+      <ThemeSwitcher />
 
       </main>
     </HydrateClient>
