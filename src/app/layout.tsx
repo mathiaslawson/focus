@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import Nav from './_components/Nav'
 
 import { 
   ClerkProvider, 
@@ -30,11 +31,12 @@ export default function RootLayout({
         <Providers>
         <ClerkProvider>
         <TRPCReactProvider>
-        <Navbar />
+        <Nav />
           {children}
           </TRPCReactProvider>
         </ClerkProvider>
         </Providers> 
+        
       </body>
     </html>
   );
