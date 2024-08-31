@@ -1,7 +1,7 @@
 import React from 'react';
-import Noisebackground from '../components/Noisebackground';
+import Noisebackground from '../_components/Noisebackground';
 
-export default function Hero() {
+export default function Hero2() {
     return (
         <>
             <Noisebackground />

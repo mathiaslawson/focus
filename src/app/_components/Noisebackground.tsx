@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Noisebackground() {
   return (
-    <div className="flex h-screen bg-orange-200	 absolute inset-0 z-0">
+    <div className="flex h-screen bg-orange-200	absolute inset-0 z-0">
       <svg width="0" height="0">
         <filter id="noiseFilter">
           <feTurbulence 
