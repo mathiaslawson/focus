@@ -18,6 +18,7 @@ import {
 
 import { Providers } from "~/providers";
 import Navbar from "./_components/navbar";
+import Noisebackground from "./_components/Noisebackground";
 
 
 
@@ -29,9 +30,13 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`} suppressHydrationWarning>
       <body>
         <Providers>
-        <ClerkProvider>
-        <TRPCReactProvider>
-        <Nav />
+        <ClerkProvider signInFallbackRedirectUrl="/app" signUpFallbackRedirectUrl="/app">
+        
+            <TRPCReactProvider>
+              
+              <Noisebackground />
+            
+               <Nav /> 
           {children}
           </TRPCReactProvider>
         </ClerkProvider>
