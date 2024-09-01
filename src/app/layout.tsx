@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`} suppressHydrationWarning>
       <body>
-        <Providers>
+        {/* <Providers> */}
         <ClerkProvider signInFallbackRedirectUrl="/app" signUpFallbackRedirectUrl="/app">
         
             <TRPCReactProvider>
@@ -40,7 +40,7 @@ export default function RootLayout({
           {children}
           </TRPCReactProvider>
         </ClerkProvider>
-        </Providers> 
+        {/* </Providers>  */}
         
       </body>
     </html>
