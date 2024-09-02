@@ -12,7 +12,7 @@ import {
 
  export const metadata = {
   title: "Focus",
-  description: "Built by mathias",
+  description: "Are you tired of constant distractions when trying to focus on a specific task? Whether it's reading an article, learning a skill online, studying a PDF, or diving into any deep work, we’ve got you covered! We are excited to introduce our new web app designed to help you lock in and concentrate never before.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
